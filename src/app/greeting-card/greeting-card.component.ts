@@ -1,13 +1,16 @@
 /** @format */
 
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+// App Models
+import { Person } from '../persons/person.model';
 
 @Component({
   selector: 'ng4d-greeting-card',
   template: `
     <article>
-      <h1>Hello, I'm William!</h1>
-      <p>And I'm a 41 years old dad.</p>
+      <h1>Hello, I'm {{ person.name }}!</h1>
+      <p>And I'm a {{ person.age }} years old dad.</p>
     </article>
   `,
   styles: [
@@ -31,4 +34,6 @@ import { Component } from '@angular/core';
     `,
   ],
 })
-export class GreetingCardComponent {}
+export class GreetingCardComponent {
+  @Input() person: Person;
+}
