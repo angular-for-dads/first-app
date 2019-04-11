@@ -2,6 +2,7 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 // App Components
 import { AppComponent } from './app.component';
@@ -12,7 +13,7 @@ import { PersonsModule } from './persons/persons.module';
 
 @NgModule({
   declarations: [AppComponent, GreetingCardComponent],
-  imports: [BrowserModule, PersonsModule],
+  imports: [BrowserModule, PersonsModule, HttpClientModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
