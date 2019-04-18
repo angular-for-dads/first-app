@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
 import { Person } from '../persons/person.model';
 
 @Component({
-  selector: 'ng4d-greeting-card',
+  selector: 'ng4d-greeting-cards-item',
   template: `
     <article>
       <h1>Hello, I'm {{ person.name }}!</h1>
@@ -34,6 +34,6 @@ import { Person } from '../persons/person.model';
     `,
   ],
 })
-export class GreetingCardComponent {
+export class GreetingCardsItemComponent {
   @Input() person: Person;
 }

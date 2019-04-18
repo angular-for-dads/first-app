@@ -14,17 +14,17 @@ import { PersonsService } from './persons/persons.service';
 @Component({
   selector: 'ng4d-root',
   template: `
-    <ng4d-greeting-card
-      *ngFor="let person of (persons$ | async)"
-      [person]="person"
-    ></ng4d-greeting-card>
+    <ng4d-greeting-cards-list [persons]="persons$ | async" (dataRequested)="requestData()">
+    </ng4d-greeting-cards-list>
   `,
 })
 export class AppComponent {
   // Always append a `$` - for stream - to an Observable property, for clarity
   persons$: Observable<Person[]>;
 
-  constructor(private personsService: PersonsService) {
+  constructor(private personsService: PersonsService) {}
+
+  requestData() {
     this.persons$ = this.personsService.getPersons();
   }
 }
