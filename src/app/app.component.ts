@@ -14,8 +14,10 @@ import { PersonsService } from './persons/persons.service';
 @Component({
   selector: 'ng4d-root',
   template: `
-    <ng4d-greeting-cards-list [persons]="persons$ | async" (dataRequested)="requestData()">
-    </ng4d-greeting-cards-list>
+    <main class="container-fluid">
+      <ng4d-greeting-cards-list [persons]="persons$ | async" (dataRequested)="requestData()">
+      </ng4d-greeting-cards-list>
+    </main>
   `,
 })
 export class AppComponent {
