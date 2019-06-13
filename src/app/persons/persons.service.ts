@@ -19,4 +19,8 @@ export class PersonsService {
   getPersons(): Observable<Person[]> {
     return this.httpClient.get<Person[]>(apiEndpointPersons);
   }
+
+  createNewPerson(newPerson: Person): Observable<Person> {
+    return this.httpClient.post<Person>(apiEndpointPersons, newPerson);
+  }
 }

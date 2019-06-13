@@ -8,7 +8,7 @@ module.exports = () => {
 
   // Create 3 persons
   for (let i = 0; i < 3; i++) {
-    data.persons.push({ name: chance.name(), age: chance.age() });
+    data.persons.push({ id: chance.guid(), name: chance.name(), age: chance.age() });
   }
 
   return data;
